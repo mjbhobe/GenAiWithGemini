@@ -1,0 +1,25 @@
+# python packages needed
+# openai
+langchain
+streamlit
+# chainlit
+pypdf2
+python-dotenv
+faiss-cpu
+huggingface_hub
+black
+psycopg2
+# for local llama
+# sentence-transformers
+# uvicorn
+# ctransformers
+# python-box
+# for accessing Google Gemini
+google-generativeai
+langchain-google-genai
+pillow
+
+
+
+
+
