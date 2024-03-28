@@ -17,8 +17,9 @@ psycopg2
 # for accessing Google Gemini
 google-generativeai
 langchain-google-genai
+ollama
 pillow
-
+beautifulsoup4
 
 
 
