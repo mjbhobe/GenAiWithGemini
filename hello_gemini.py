@@ -34,9 +34,8 @@ def main():
     llm = genai.GenerativeModel("gemini-pro")
     prompt_text = """I am writing a blog about Generative AI.\n
         Can you give me a comparison of Chat GPT 4 and Google Gemini?
-        Please return response asa JSON object.
     """
-    # ask Gemini
+    # ask Gemini Pro
     try:
         response = llm.generate_content(prompt_text)
         print(response.text)

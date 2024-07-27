@@ -14,11 +14,11 @@ psycopg2
 # uvicorn
 # ctransformers
 # python-box
+# ollama
 # for accessing Google Gemini
 google-generativeai
 langchain-google-genai
-"langchain[docarray]"
-ollama
+# "langchain[docarray]"
 pillow
 beautifulsoup4
 
