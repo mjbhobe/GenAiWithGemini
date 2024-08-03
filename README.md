@@ -1,4 +1,5 @@
-# GenAiWithGemini
+# Generative AI With Google Gemini
+![Google Gemini Image](images/doc/google_gemini.png)
 
 ## Generative AI examples with Google Gemini LLM
 
