@@ -73,7 +73,7 @@ Google Gemini API Key
 
 **Test your setup:**
 
-* In Visual Studio Code create a new Python file `test.py` and type in the following code.
+* In Visual Studio Code create a new Python file `hello_gemini.py` and type in the following code.
 
   ```python
   import os
@@ -93,8 +93,15 @@ Google Gemini API Key
   print(response.text)
   ```
 * Ensure that the local `venv` environment you have created above is the active environment
+
+  You can do this in 2 ways
+    * Start a new Terminal with the `hello_gemini.py` code file open in code editor. The Terminal should open with the correct Python environment automatically selected. This is evident from the command line prompt, which should read something like `(venv) (py311) [<<some text>> google_gemini]$`
+    * If this is not happening, manually select the correct Python interpreter to use:
+      * Press Ctrl+Shift+P (Cmd+Shift+P on a Mac), and from dropdown displayed select "Python: Select Interpreter" option. This will display list of all Python environments you have created so far.
+      * Select the one that says `Python 3.11.X ('venv': conda) ./venv/bin/python`, which is the local Python environment you just created.
 * Run the code above by clicking the Run button ![Run Button](images/doc/vscode_run.png)
 * If you do not see any errors, then Congratulations! Your setup is working. Relax & get yourself a well-deserved cup/glass of your favourite beverage (tea/coffee/beer/whiskey?)
 
+  ![Successful Run](images/doc/test_success.png)
 
    
