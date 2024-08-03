@@ -22,12 +22,6 @@ from IPython.display import Markdown
 _ = load_dotenv(find_dotenv())  # read local .env file
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
-# def get_gemini_model(
-#     model_name="gemini-pro",
-#     temperature=None,
-#     top_p=None,
-#     top_k=None,) -> genai.GenerativeModel:
-
 
 # create instance of the text model
 model = genai.GenerativeModel("gemini-pro")
