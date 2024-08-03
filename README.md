@@ -77,15 +77,19 @@ Google Gemini API Key
 
   ```python
   import os
-  from dotenv import find_dotenv, load_dotenv
+  from dotenv import load_dotenv, find_dotenv
+
   import google.generativeai as genai
 
-  _ = load_dotenv(find_dotenv())
+  # load env variables from .env file
+  _ = load_dotenv(find_dotenv())  # read local .env file
   genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
-  # create an instance of Gemini
+
+  # create an instance of Gemini LLM
+  # alternatively, use "gemini-pro" instead of "gemini-1.5-flash"
   model = genai.GenerativeModel("gemini-1.5-flash")
-  response = model.generate_content("Write me a story about Google Gemini LLM")
+  response = model.generate_content("What is Google Gemini?")
   print(response.text)
   ```
 * Ensure that the local `venv` environment you have created above is the active environment
