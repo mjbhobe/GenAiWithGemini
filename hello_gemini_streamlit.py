@@ -1,12 +1,11 @@
-""" hello_gemini.py: Hello Google Gemini
-This is a streamlit based Q&A application that works with Google Gemini
+""" hello_gemini_streamlit.py: 
+This is a streamlit based Q&A application with Google Gemini LLM
 
 @author: Manish Bhobe
 My experiments with Python, Data Science, Deep Learning & Generative AI.
 Code is made available as-is & for learning purposes only, please use at your own risk!!
 """
 
-import pathlib
 import textwrap
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -23,7 +22,8 @@ _ = load_dotenv(find_dotenv())  # read local .env file
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 
-# create instance of the text model
+# create an instance of Gemini text model
+# alternatively, use "gemini-pro" instead of "gemini-1.5-flash"
 model = genai.GenerativeModel("gemini-pro")
 
 
@@ -36,14 +36,23 @@ def to_markdown(text):
 def get_gemini_response(
     prompt_text: str,
     llm=model,
-    temperature=None,
+    temperature=1.0,
     top_p=None,
     top_k=None,
 ):
     """return response form LLM given prompt_text"""
     try:
+        complete_prompt = f"""
+        You are adept at providing accurate information on historical events, facts & figures, including 
+        dates and times. When an event in the question asked does not occur on date/time asked in the 
+        question, please respond with the nearest correct date and time when the event actually occured. 
+        Always assume that the user is new to the topic, unless explicitly mentioned and provide as detailed
+        as response as possible.
+        
+        {prompt_text}
+        """
         gen_config = {"temperature": temperature, "top_k": top_k, "top_p": top_p}
-        response = llm.generate_content(prompt_text, generation_config=gen_config)
+        response = llm.generate_content(complete_prompt, generation_config=gen_config)
         return response.text
     except ValueError as err:
         print(f"get_gemini_response() Error: {err}")
