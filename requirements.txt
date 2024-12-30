@@ -18,6 +18,8 @@ psycopg2
 # for accessing Google Gemini
 google-generativeai
 langchain-google-genai
+langchain-community
+pypdf
 # "langchain[docarray]"
 pillow
 beautifulsoup4
