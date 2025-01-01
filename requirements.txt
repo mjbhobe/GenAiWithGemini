@@ -19,6 +19,7 @@ psycopg2
 google-generativeai
 langchain-google-genai
 langchain-community
+langgraph
 pypdf
 # "langchain[docarray]"
 pillow
