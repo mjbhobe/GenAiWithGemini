@@ -58,6 +58,12 @@ prompt_template = ChatPromptTemplate.from_messages(
     ]
 )
 
+# --------------------------------------------------------------
+# NOTE: Google Gemini does not work very well & consistently
+# for this kind of problem. OpenAI works very well and is
+# able to extract all entities irrespective of order in
+# which they appear in the sentence
+# --------------------------------------------------------------
 
 # define our LLM - as usual we'll be using Google Gemini
 # create instance of the text model
@@ -66,9 +72,13 @@ prompt_template = ChatPromptTemplate.from_messages(
 #     google_api_key=os.environ["GOOGLE_API_KEY"],
 # )
 
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
 
-model = ChatOpenAI(model="gpt-3.5-turbo")
+# model = ChatOpenAI(model="gpt-3.5-turbo")
+
+from langchain_anthropic import ChatAnthropic
+
+model = ChatAnthropic(model="claude-3-5-sonnet-20241022", temperature=0)
 
 structured_llm = model.with_structured_output(schema=Person)
 

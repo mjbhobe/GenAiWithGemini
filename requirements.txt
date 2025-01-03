@@ -18,6 +18,8 @@ psycopg2
 # for accessing Google Gemini
 google-generativeai
 langchain-google-genai
+langchain-anthropic
+langchain_groq
 langchain-community
 langgraph
 pypdf
